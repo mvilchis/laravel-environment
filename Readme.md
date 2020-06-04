@@ -3,13 +3,20 @@
 El proyecto tiene la siguiente estructura:
 
 .
-|____docker-compose.yaml    # Definicion del docker-compose <- Modificar las credenciales con el .env
-|____Dockerfile                        # Definición del docker de laravel
-|____php                                  # Directorio de configuración para php 
-|	 |____local.ini                      # Definición del archivo de configuración de php
-|____nginx                               # Directorio de configuración para Nginx
-| 	|____conf.d                        # Directorio de configuración de conf.d para nginx
-| 	|	 |____app.conf              # Archivo de configuración de nginx 
+
+|____ docker-compose.yaml .................. # Definicion del docker-compose <- Modificar las credenciales con el .env
+
+|____ Dockerfile ........................... # Definición del docker de laravel
+
+|____ php .................................. # Directorio de configuración para php 
+
+|____ | ____ local.ini ..................... # Definición del archivo de configuración de php
+
+|____ nginx ................................ # Directorio de configuración para Nginx
+
+|____ | ____conf.d ......................... # Directorio de configuración de conf.d para nginx
+
+|____ | ____ |____ app.conf ................ # Archivo de configuración de nginx 
 
 Comandos: 
 
