@@ -48,7 +48,7 @@ $ docker-compose exec app php artisan config:cache
 
 # Load database
 
-docker-compose exec  mysql -u root --password=$MYSQL_ROOT_PASSWORD  $MYSQL_DATABASE < /tmp/dump.sql
+docker-compose exec  db mysql -u root --password=$MYSQL_ROOT_PASSWORD  $MYSQL_DATABASE < db/dump.sql
 ```
 
 
