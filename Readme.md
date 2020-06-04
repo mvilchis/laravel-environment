@@ -16,6 +16,8 @@ Comandos:
 ```bash
 $ cd project
 $ git clone 'DIR PROJECT'
+$ cp .env.example .env 
+$ vim .env   #Configurar el archivo .env adecuandolo con el docker-compose 
 $ cd ..
 $ docker-compose up -d
 ```
@@ -23,7 +25,7 @@ $ docker-compose up -d
 En otra terminal: 
 
 ```bash
-$ docker run --rm -v $(pwd):/app composer instal
+$ docker run --rm -v $(pwd)/project:/app composer instal
 $ docker-compose exec app php artisan key:generate
 $ docker-compose exec app php artisan config:cache
 ```
