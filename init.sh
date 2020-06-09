@@ -84,14 +84,15 @@ createEnv(){
 #--- Function lastSteps
 # Funcion para crear la llave en php y configurar el cache
 lastSteps(){
-
+  DB_NAME="$1"
+  DB_PASS="$2"
   infoComand "Paso 6. Generacion de llave y config:cache"
   docker-compose exec app php artisan key:generate
   execComand $? "key:generate"
   docker-compose exec app php artisan config:cache
   execComand $? "config:cache"
   infoComand "Paso 7. Carga de la base de datos"
-  docker exec db mysql -u root --password=pass laravel < db/dump.sql
+  docker exec db mysql -u root --password=$DB_PASS $DB_NAME < db/dump.sql
   execComand $? "mysql load dump"
   echo ""
 
@@ -140,7 +141,7 @@ main() {
     execComand $? "Ejecución de docker-compose up"
     echo ""
 
-    lastSteps
+    lastSteps $DB_NAME $DB_PASS
 }
 
 main
