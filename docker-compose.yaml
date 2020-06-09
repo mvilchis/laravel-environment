@@ -44,12 +44,12 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: tarjetas_gratuidad
-      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: pass
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./db/:/tmp
+      - ./db/dump.sql:/tmp/dump.sql
     networks:
       - app-network
 
